@@ -7,7 +7,7 @@
 ----
 
 <p align="center">
-    <img src="https://images7.alphacoders.com/108/1086711.png" alt="Sage" width="400">
+    <img src="https://images7.alphacoders.com/108/1086711.png" alt="Sage" width="500">
 </p>
 
 ---
