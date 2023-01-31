@@ -1,44 +1,51 @@
-﻿using System;
+using System;
 using System.Runtime.InteropServices;
 using System.Threading;
 using System.Windows.Input;
 
 class App {
     [DllImport("user32.dll")]
-    internal static extern void keybd_event(
-        byte bVk,
-        byte bScan,
-        uint dwFlags,
-        uint dwExtraInfo
-    );
+    public static extern void keybd_event(uint bVk, uint bScan, uint dwFlags, uint dwExtraInfo);
 
-    private static void Larnab()
+    private static void Bhop()
     {
-        bool isLarnabOn = false;
+        Console.WriteLine("Bhop has started.");
+        bool isToggled = false;
+        bool isBhopOn = false;
 
         while (true)
         {
-            if (Keyboard.IsKeyDown(Key.Space))
+            if (Keyboard.IsKeyDown(Key.Insert))
             {
-                if (!isLarnabOn)
-                    isLarnabOn = true;
+                isToggled = !isToggled;
+                Thread.Sleep(500);
             }
 
-            if (isLarnabOn)
+            if (isToggled)
             {
-                App.keybd_event(0x43, MapVirtualKey(0x43, 0), KEYEVENTF_EXTENDEDKEY, 0);
+                if (Keyboard.IsKeyDown(Key.Space))
+                {
+                    isBhopOn = true;
+                }
+
+                if (isBhopOn)
+                {
+                    keybd_event(0x43, 0, 0x0001, 0); // SENDING THE KEY C (My Key To Jump In VAL - Check this if you change it : http://www.kbdedit.com/manual/low_level_vk_list.html)
+                } 
+
+
+                if (isBhopOn && Keyboard.IsKeyUp(Key.Space))
+                {
+                    isBhopOn = false;
+                }
             }
-
-
-            if (!Keyboard.IsKeyDown(Key.Space))
-                isLarnabOn = false;
-
+                
             Thread.Sleep(30);
         }
     }
 
     [STAThread]
     static void Main(string[] args) {
-        Larnab();
+        Bhop();
     }
 }
