@@ -16,7 +16,7 @@
 
 > # Features.
 
-* Works on any game, adjust the sleep time if needed.
+* **Works on any game, adjust the sleep time if needed.**
 
 <br/>
 
