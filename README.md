@@ -1,4 +1,4 @@
-<h1 align="center">Safe Bhopper</h1>
+<h1 align="center">Sage Bhopper</h1>
 
 <p align='center'>
     <b>🐰 Simple Bhop Script used in Valorant. 🐰</b>
