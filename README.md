@@ -22,7 +22,8 @@
 
 > # To-Do.
 
-**Compile the code**
+* **Add PresentationCore.dll (Find it on google), WindowBase and System.Windows to the project references.**
+* **Compile the code**
 
 <br/>
 
